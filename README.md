@@ -15,11 +15,12 @@ A complete web application that uses facial recognition to automate classroom at
 - [Objective](#objective)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
+- [Project Architecture Diagram](#Project-Architecture-Diagram)
 - [System Architecture](#system-architecture)
 - [Project Structure](#project-structure)
 - [Setup and Installation](#setup-and-installation)
 - [How to Use](#how-to-use)
-- [License](#license)
+- [Instruction](#Instruction)
 
 ---
 
