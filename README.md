@@ -74,6 +74,9 @@ The system works in two main phases:
 
 ---
 
+## Project Architecture Diagram
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/81e585f0-a68e-46d1-8e05-5b3e04d6d543" />
+
 ## Project Structure
 
 Here is the file structure for the project:
@@ -157,3 +160,28 @@ python app.py
 
 ---
 
+## Instruction
+
+**Step 1: Project Setup and Installation**
+* Create a project folder (e.g., AttendanceApp).
+
+**Step 2: The Face Recognition Engine (The "AI" Core)**
+The face_recognition library works in two phases:
+
+* Enrollment: You show it pictures of known students and it creates a "face encoding" (a 128-number vector) for each.
+* Recognition: You show it a new face, it creates a new encoding, and it compares this new encoding to all the known ones to find the closest match.
+  
+**Step 3: The Backend (Flask + SQLite)**
+*Create a file named app.py
+
+**Step 4: The Frontend Dashboard (HTML/JS)**
+*Create a folder named templates in your project directory. Inside it, create index.html.
+
+**Step 5: Running Your System**
+Make sure you have run python encode_faces.py at least once.
+
+* Run the web server: python app.py.
+* Open your browser and go to http://127.0.0.1:5000.
+* You can now upload a photo to mark attendance or view reports for any date.
+
+---
