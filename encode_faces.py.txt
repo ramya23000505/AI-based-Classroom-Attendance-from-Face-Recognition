@@ -1,0 +1,32 @@
+# encode_faces.py
+import face_recognition
+import os
+import pickle
+
+print("Starting encoding...")
+dataset_path = 'dataset'
+known_encodings = []
+known_names = []
+
+# Loop through each image in the dataset
+for image_name in os.listdir(dataset_path):
+    # Load the image
+    image_path = os.path.join(dataset_path, image_name)
+    image = face_recognition.load_image_file(image_path)
+    
+    # Get the face encoding (the [0] assumes one face per image)
+    try:
+        encoding = face_recognition.face_encodings(image)[0]
+        
+        # Add the encoding and name to our lists
+        known_encodings.append(encoding)
+        known_names.append(os.path.splitext(image_name)[0]) # Gets name from filename
+    except IndexError:
+        print(f"Warning: No face found in {image_name}, skipping.")
+
+# Save the encodings and names to a file
+encoding_data = {"encodings": known_encodings, "names": known_names}
+with open('encodings.pickle', 'wb') as f:
+    pickle.dump(encoding_data, f)
+
+print("Encodings saved successfully.")
